@@ -12,12 +12,6 @@ button {
   border-radius: 5px;
 }
 
-.delete-button{
-  padding: 10px !important;
-  border-radius:50% !important;
-}
-
-
 nav {
   position: fixed;
   display: grid;
@@ -242,11 +236,11 @@ nav {
   opacity: 0;
   position: absolute;
   margin-left: -12em;
-  margin-top: 11em;
-  padding: 0.1em 0.3em;
+  margin-top: 10em;
+  padding: 8px;
+  border-radius:50%;
   background-color: #890000;
   color: #fff;
-  transform: scale(1.5);
 }
 
 .delete-button:hover {
@@ -256,4 +250,26 @@ nav {
 
 .item:hover .delete-button {
   opacity: 1;
+}
+
+@media screen and (max-width: 667px) {
+  .delete-button {
+    opacity: 0;
+    font-size:12px;
+    position: absolute;
+    margin-left: -8em;
+    padding: 8px;
+    border-radius:50%;
+    background-color: #890000;
+    color: #fff;
+  }
+  
+  .delete-button:hover {
+    background-color: #670000;
+    color: #fff;
+  }
+  
+  .item:hover .delete-button {
+    opacity: 1;
+  }
 }
