@@ -1,6 +1,8 @@
 import getPhotoUrl from 'get-photo-url';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '../dexie';
+import { ColorRing } from 'react-loader-spinner';
+
 
 const Gallery = () => {
     const allPhotos = useLiveQuery(()=> db.gallery.toArray(), [])
@@ -27,7 +29,15 @@ const Gallery = () => {
             </label>
 
             <section className="gallery">
-                {!allPhotos && <p>Loading...</p>}
+                {!allPhotos && <p><ColorRing
+  visible={true}
+  height="80"
+  width="80"
+  ariaLabel="blocks-loading"
+  wrapperStyle={{}}
+  wrapperClass="blocks-wrapper"
+  colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+/></p>}
                 {allPhotos?.map(photo => (
                     <div className="item" key={photo.id}>
                         <img src={photo.url} className="item-image" alt="" />
