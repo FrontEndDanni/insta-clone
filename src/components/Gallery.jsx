@@ -12,7 +12,10 @@ const Gallery = () => {
     }
 
     const removePhoto = (id) => {
-        db.gallery.delete(id)
+        let confirmDelete = "Are you sure you want to delete your photo?";
+        if (window.confirm(confirmDelete) == true){
+            db.gallery.delete(id)
+        }
     }
 
 
@@ -28,7 +31,7 @@ const Gallery = () => {
                 {allPhotos?.map(photo => (
                     <div className="item" key={photo.id}>
                     <img src={photo.url} className="item-image" alt="" />
-                    <button className="delete-button" onClick={() => removePhoto(photo.id)}>Delete</button>
+                    <button className="delete-button fas fa-trash" onClick={() => removePhoto(photo.id)} />
                 </div>
                 ))}
             </section>

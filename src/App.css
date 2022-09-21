@@ -12,6 +12,12 @@ button {
   border-radius: 5px;
 }
 
+.delete-button{
+  padding: 10px !important;
+  border-radius:50% !important;
+}
+
+
 nav {
   position: fixed;
   display: grid;
@@ -211,7 +217,6 @@ nav {
   height: 17.5em;
   width: 17.5em;
   background: rgb(255, 255, 255);
-  cursor: pointer;
   
 }
 
@@ -220,7 +225,6 @@ nav {
     height: 10.5em;
     width: 10.5em;
     background: rgb(255, 255, 255);
-    cursor: pointer;
 }
 }
 
